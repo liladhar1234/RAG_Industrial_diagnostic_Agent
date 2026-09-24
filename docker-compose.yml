@@ -1,0 +1,158 @@
+# =============================================================================
+# Industrial Equipment Diagnostic & Spare-Part Agent - docker-compose.yml
+#
+# Services are grouped by PROFILE so you only start what the current phase needs.
+#
+#   Phase 0-1 (ingestion, notebooks):
+#       docker compose up -d dev
+#       docker compose exec dev bash
+#       docker compose exec dev python src/ingest/explore.py data/raw/manual.pdf
+#       docker compose exec dev jupyter lab --ip=0.0.0.0 --no-browser --allow-root
+#         -> open http://localhost:8888
+#
+#   Phase 2-3 (retrieval + eval): add the vector DB
+#       docker compose --profile retrieval up -d
+#       Qdrant dashboard: http://localhost:6333/dashboard
+#
+#   Phase 5 (API + UI):
+#       docker compose --profile retrieval --profile serve up -d --build
+#       API docs: http://localhost:8000/docs      UI: http://localhost:8501
+#
+#   Optional fully-local LLM (no paid API):
+#       docker compose --profile local-llm up -d ollama
+#       docker compose exec ollama ollama pull llama3.1:8b
+#
+#   Run the evaluation report (one-off container):
+#       docker compose run --rm dev python -m evaluation.run_eval
+#
+#   Stop everything:      docker compose --profile "*" down
+#   Wipe all volumes too: docker compose --profile "*" down -v
+# =============================================================================
+
+name: diag-agent
+
+# ---- Shared config for every Python service (defined once, reused below) ----
+x-python-service: &python-service
+  build:
+    context: .
+    dockerfile: Dockerfile
+  image: diag-agent:dev
+  working_dir: /app
+  env_file:
+    - path: .env          # copy .env.example to .env and add your keys
+      required: false     # don't fail if the file is missing
+  environment: &python-env
+    PYTHONPATH: /app/src
+    QDRANT_URL: http://qdrant:6333
+    OLLAMA_URL: http://host.docker.internal:11434
+    API_URL: http://api:8000
+    MOCK_DB_PATH: /app/data/db/parts.sqlite
+    HF_HOME: /root/.cache/huggingface     # embedding/reranker models cached here
+  volumes:
+    - ./:/app                             # live-edit code from VS Code, no rebuilds
+    - hf_cache:/root/.cache/huggingface   # download models once, reuse forever
+  restart: unless-stopped
+
+services:
+  # ---------------------------------------------------------------------------
+  # dev: your working container. Ingestion, notebooks, eval, tests all run here.
+  # Starts by default (no profile). Attach VS Code with the "Dev Containers"
+  # extension, or just use `docker compose exec dev bash`.
+  # ---------------------------------------------------------------------------
+  dev:
+    <<: *python-service
+    container_name: diag-dev
+    command: sleep infinity
+    ports:
+      - "8888:8888"        # Jupyter Lab
+    tty: true
+    stdin_open: true
+
+  # ---------------------------------------------------------------------------
+  # qdrant: vector database (dense vectors + optional sparse/hybrid support)
+  # Profile: retrieval
+  # ---------------------------------------------------------------------------
+  qdrant:
+    image: qdrant/qdrant:v1.12.5     # pinned for reproducibility; bump deliberately
+    container_name: diag-qdrant
+    profiles: ["retrieval", "serve"]
+    ports:
+      - "6333:6333"        # REST + dashboard
+      - "6334:6334"        # gRPC
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c ':> /dev/tcp/127.0.0.1/6333' || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # api: FastAPI backend (/diagnose, /session/{id}, /health)
+  # Profile: serve
+  # Expects src/api/main.py exposing `app`
+  # ---------------------------------------------------------------------------
+  api:
+    <<: *python-service
+    container_name: diag-api
+    profiles: ["serve"]
+    command: >
+      uvicorn api.main:app
+      --host 0.0.0.0 --port 8000
+      --reload --reload-dir /app/src
+    ports:
+      - "8000:8000"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request; urllib.request.urlopen('http://localhost:8000/health')\""]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s     # first start may download the embedding model
+
+  # ---------------------------------------------------------------------------
+  # ui: Chainlit chat interface that calls the API
+  # Profile: serve
+  # Expects src/ui/app.py
+  # ---------------------------------------------------------------------------
+  ui:
+    <<: *python-service
+    container_name: diag-ui
+    profiles: ["serve"]
+    command: chainlit run src/ui/app.py --host 0.0.0.0 --port 8501 --headless
+    ports:
+      - "8501:8501"
+    depends_on:
+      api:
+        condition: service_healthy
+
+  # ---------------------------------------------------------------------------
+  # ollama: local LLM server (optional; use instead of OpenAI/Claude APIs)
+  # Profile: local-llm
+  # For NVIDIA GPU, uncomment the deploy block (needs nvidia-container-toolkit).
+  # ---------------------------------------------------------------------------
+  ollama:
+    image: ollama/ollama:latest
+    container_name: diag-ollama
+    profiles: ["local-llm"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+volumes:
+  qdrant_data:
+  hf_cache:
+  ollama_data:

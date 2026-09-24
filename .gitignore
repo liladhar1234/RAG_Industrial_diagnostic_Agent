@@ -1,0 +1,25 @@
+# secrets
+.env
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# data artifacts (regenerable, or too large for git)
+data/processed/
+data/db/*.sqlite
+data/eval/*_results.json
+data/eval/latency_results.json
+
+# model caches / volumes (these live in Docker volumes, not the repo, but just in case)
+.cache/
+*.jsonl.bak
+
+# OS noise
+.DS_Store
+
+# node (docx skill artifacts, if any leaked in)
+node_modules/
+data/raw/*.pdf

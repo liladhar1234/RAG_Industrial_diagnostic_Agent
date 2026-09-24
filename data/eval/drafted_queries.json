@@ -1,0 +1,267 @@
+{
+  "_readme": "Drafted by an LLM from the worksheet hints; review every query. Apply with apply_drafts.py. 'skip' entries are stubs deliberately left empty, with the reason.",
+  "fill": [
+    {
+      "expected_id": "ACS580-fault-6581",
+      "type": "symptom",
+      "name": "Parameter system",
+      "query": "drive tripped right after power-up, says the saved parameters failed to load"
+    },
+    {
+      "expected_id": "ACS580-warning-A6D1",
+      "type": "symptom",
+      "name": "FBA A parameter conflict",
+      "query": "warning on the panel but the drive keeps running, the PLC is asking for a function the drive doesn't have or hasn't enabled"
+    },
+    {
+      "expected_id": "ACS580-fault-65A1",
+      "type": "symptom",
+      "name": "FBA A parameter conflict",
+      "query": "drive tripped because the PLC requested a function it doesn't support or that isn't switched on"
+    },
+    {
+      "expected_id": "ACS580-fault-5098",
+      "type": "symptom",
+      "name": "I/O communication loss",
+      "query": "drive stopped, the standard I/O block seems to have lost communication"
+    },
+    {
+      "expected_id": "ACS580-fault-7184",
+      "type": "symptom",
+      "name": "Brake resistor wiring",
+      "query": "tripped, I suspect the braking resistor is shorted or the chopper control has failed"
+    },
+    {
+      "expected_id": "ACS580-warning-A792",
+      "type": "symptom",
+      "name": "Brake resistor wiring",
+      "query": "on our R6 frame drive a warning says the braking resistor circuit looks shorted, but it keeps running"
+    },
+    {
+      "expected_id": "ACS580-warning-AFF8",
+      "type": "symptom",
+      "name": "Motor heating active",
+      "query": "motor isn't running but the drive shows a message that it's pre-heating it, is that normal"
+    },
+    {
+      "expected_id": "ACS580-fault-6306",
+      "type": "symptom",
+      "name": "FBA A mapping file",
+      "query": "trips after I configured the fieldbus adapter, complains it can't read the mapping file"
+    },
+    {
+      "expected_id": "ACS580-warning-A5EA",
+      "type": "symptom",
+      "name": "Measurement circuit temperature",
+      "query": "warning that the drive has a problem reading its own internal temperature"
+    },
+    {
+      "expected_id": "ACS580-warning-AFE1",
+      "type": "symptom",
+      "name": "Emergency stop (off2)",
+      "query": "someone pressed the e-stop button and now the drive shows a warning and won't run"
+    },
+    {
+      "expected_id": "ACS580-warning-A6E5",
+      "type": "symptom",
+      "name": "AI parametrization",
+      "query": "warning about an analog input, the mA/V hardware switch doesn't match the parameter setting"
+    },
+    {
+      "expected_id": "ACS580-warning-A490",
+      "type": "symptom",
+      "name": "Incorrect temperature sensor setup",
+      "query": "warning that temperature can't be monitored because the sensor adapter is set up wrong"
+    },
+    {
+      "expected_id": "ACS580-fault-5093",
+      "type": "symptom",
+      "name": "Rating ID mismatch",
+      "query": "drive tripped after a firmware update, hardware doesn't match what's stored in its memory"
+    },
+    {
+      "expected_id": "ACS580-warning-A79C",
+      "type": "symptom",
+      "name": "BC IGBT excess temperature",
+      "query": "warning that the brake chopper transistor is running hot, drive still going"
+    },
+    {
+      "expected_id": "ACS580-fault-7192",
+      "type": "symptom",
+      "name": "BC IGBT excess temperature",
+      "query": "drive tripped because the brake chopper IGBT got too hot"
+    },
+    {
+      "expected_id": "ACS580-warning-A6A6",
+      "type": "symptom",
+      "name": "Voltage category unselected",
+      "query": "brand new drive shows a warning that nobody has chosen the supply voltage class yet"
+    },
+    {
+      "expected_id": "ACS580-warning-A7EE",
+      "type": "symptom",
+      "name": "Panel loss Programmable warning: 49.05 Communication loss action",
+      "query": "warning after the panel cable came loose while the panel was the active control location"
+    },
+    {
+      "expected_id": "ACS580-warning-A6B1",
+      "type": "symptom",
+      "name": "User pass code not confirmed",
+      "query": "changed the drive's passcode and now it warns that the new one was never verified"
+    },
+    {
+      "expected_id": "ACS580-warning-A2B3",
+      "type": "symptom",
+      "name": "Earth leakage",
+      "query": "warning that the load is unbalanced, probably a ground fault in the motor or its cable, drive still running"
+    },
+    {
+      "expected_id": "ACS580-fault-5682",
+      "type": "symptom",
+      "name": "Power unit lost",
+      "query": "drive tripped and the control board can't talk to the power stage any more"
+    },
+    {
+      "expected_id": "ACS580-warning-AFEB",
+      "type": "symptom",
+      "name": "Run enable missing",
+      "query": "drive refuses to start and a warning says the enable signal isn't there"
+    },
+    {
+      "expected_id": "ACS580-fault-7085",
+      "type": "symptom",
+      "name": "Incompatible option module",
+      "query": "trips right after fitting a fieldbus adapter, apparently this drive doesn't support it"
+    },
+    {
+      "expected_id": "ACS580-warning-A780",
+      "type": "symptom",
+      "name": "Motor stall Programmable warning: 31.24 Stall function",
+      "query": "warning appears when the motor is struggling under too much load and barely turning"
+    },
+    {
+      "expected_id": "ACS580-fault-64B3",
+      "type": "symptom",
+      "name": "Macro parameterization error",
+      "query": "after selecting an application macro the drive trips, it tried to overwrite a parameter that can't be changed"
+    },
+    {
+      "expected_id": "ACS580-warning-A492",
+      "type": "symptom",
+      "name": "External temperature 2 (Editable message text)",
+      "query": "warning, the second external temperature sensor is above its warning limit"
+    },
+    {
+      "expected_id": "ACS580-fault-7191",
+      "type": "hard_negative",
+      "name": "BC short circuit",
+      "query": "tripped on a short circuit but the motor cable is fine, it's the brake chopper IGBT that's shorted"
+    },
+    {
+      "expected_id": "ACS580-warning-A2B4",
+      "type": "hard_negative",
+      "name": "Short circuit",
+      "query": "warning about a short circuit in the motor or its cable, but the drive hasn't tripped"
+    },
+    {
+      "expected_id": "ACS580-warning-A2BA",
+      "type": "hard_negative",
+      "name": "IGBT overload",
+      "query": "drive still running but warns the power transistors are overloaded, maybe a short in the motor cable"
+    },
+    {
+      "expected_id": "ACS580-fault-3220",
+      "type": "hard_negative",
+      "name": "DC link undervoltage",
+      "query": "drive tripped because the DC bus voltage dropped, I suspect a missing supply phase or a blown fuse"
+    },
+    {
+      "expected_id": "ACS580-warning-A4A0",
+      "type": "hard_negative",
+      "name": "Control board temperature",
+      "query": "warning that the control unit is too hot, drive keeps running"
+    }
+  ],
+  "skip": [
+    {
+      "expected_id": "ACS580-fault-80B2",
+      "type": "symptom",
+      "reason": "Supervision functions 1/2/3 read alike; no natural query names the third."
+    },
+    {
+      "expected_id": "ACS580-fault-5693",
+      "type": "symptom",
+      "reason": "Shares the name 'Measurement circuit DFF' and cause with warning A5EE; no symptom separates them."
+    },
+    {
+      "expected_id": "ACS580-warning-A5EE",
+      "type": "symptom",
+      "reason": "Shares the name 'Measurement circuit DFF' and cause with fault 5693; no symptom separates them."
+    },
+    {
+      "expected_id": "ACS580-fault-5698",
+      "type": "symptom",
+      "reason": "Unknown power-unit fault: no observable symptom beyond its name."
+    },
+    {
+      "expected_id": "ACS580-fault-5696",
+      "type": "symptom",
+      "reason": "No natural technician description of 'state feedback does not match control signals'."
+    },
+    {
+      "expected_id": "ACS580-fault-2281",
+      "type": "symptom",
+      "reason": "The only description is the measurement-offset detail itself."
+    },
+    {
+      "expected_id": "ACS580-fault-9082",
+      "type": "symptom",
+      "reason": "External fault 1-5 read alike; no natural query names the second."
+    },
+    {
+      "expected_id": "ACS580-warning-B5A0",
+      "type": "symptom",
+      "reason": "Overlaps the STO warning A5A0 and fault FA81; a natural query cannot separate them."
+    },
+    {
+      "expected_id": "ACS580-warning-A4A1",
+      "type": "symptom",
+      "reason": "Part of the drive/IGBT temperature cluster (A4A1/4210, A4A9/4290, A4B0/4310, A4F6/42F1): descriptions are near-identical, so 'the drive is overheating' has no single right chunk. Put it in the conversation set, where asking a question is the correct outcome."
+    },
+    {
+      "expected_id": "ACS580-warning-A4A1",
+      "type": "hard_negative",
+      "reason": "Part of the drive/IGBT temperature cluster (A4A1/4210, A4A9/4290, A4B0/4310, A4F6/42F1): descriptions are near-identical, so 'the drive is overheating' has no single right chunk. Put it in the conversation set, where asking a question is the correct outcome."
+    },
+    {
+      "expected_id": "ACS580-fault-1081",
+      "type": "symptom",
+      "reason": "Fault 64A4 is also 'Rating ID fault'; too close for a single expected_id."
+    },
+    {
+      "expected_id": "ACS580-fault-1081",
+      "type": "hard_negative",
+      "reason": "Fault 64A4 is also 'Rating ID fault'; too close for a single expected_id."
+    },
+    {
+      "expected_id": "ACS580-fault-6591",
+      "type": "hard_negative",
+      "reason": "Fault 1080 has the same name and near-identical cause; no symptom separates them."
+    },
+    {
+      "expected_id": "ACS580-warning-A4A9",
+      "type": "hard_negative",
+      "reason": "Part of the drive/IGBT temperature cluster (A4A1/4210, A4A9/4290, A4B0/4310, A4F6/42F1): descriptions are near-identical, so 'the drive is overheating' has no single right chunk. Put it in the conversation set, where asking a question is the correct outcome."
+    },
+    {
+      "expected_id": "ACS580-warning-A4F6",
+      "type": "hard_negative",
+      "reason": "Part of the drive/IGBT temperature cluster (A4A1/4210, A4A9/4290, A4B0/4310, A4F6/42F1): descriptions are near-identical, so 'the drive is overheating' has no single right chunk. Put it in the conversation set, where asking a question is the correct outcome."
+    },
+    {
+      "expected_id": "ACS580-fault-4310",
+      "type": "hard_negative",
+      "reason": "Part of the drive/IGBT temperature cluster (A4A1/4210, A4A9/4290, A4B0/4310, A4F6/42F1): descriptions are near-identical, so 'the drive is overheating' has no single right chunk. Put it in the conversation set, where asking a question is the correct outcome."
+    }
+  ]
+}

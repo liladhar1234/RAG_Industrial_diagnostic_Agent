@@ -1,0 +1,42 @@
+# --- Phase 1: ingestion ---
+pymupdf
+pdfplumber
+pydantic>=2
+pandas
+numpy
+# docling            # optional: layout-aware parser to compare against (large install)
+
+# --- Phase 2: retrieval ---
+rank-bm25
+qdrant-client
+sentence-transformers   # BGE embeddings + cross-encoder reranker (uses CPU torch)
+
+# --- LLM providers (use whichever you choose) ---
+openai
+anthropic
+ollama
+langchain-ollama
+
+# --- Phase 3: evaluation ---
+ragas
+datasets
+scikit-learn
+
+# --- Phase 4: agent ---
+langgraph
+langchain-core
+langchain-openai
+langchain-anthropic
+
+# --- Phase 5: API + UI ---
+fastapi
+uvicorn[standard]
+httpx
+sse-starlette
+chainlit
+
+
+# --- Dev tooling ---
+jupyterlab
+pytest
+python-dotenv

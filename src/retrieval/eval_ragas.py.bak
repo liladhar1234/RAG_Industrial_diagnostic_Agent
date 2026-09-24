@@ -1,0 +1,172 @@
+"""
+eval_ragas.py
+
+Phase 3: Ragas generation-quality metrics (faithfulness, answer_relevancy,
+context_precision, context_recall) over the agent's ACTUAL generated
+answers - not retrieval alone. Complements eval_agent.py's deterministic
+hit@k/MRR, which only checks whether the right chunk was retrieved, not
+whether the final answer text is faithful to it.
+
+CAVEAT, worth repeating in your report: the judge here is a local
+qwen2.5:3b via Ollama, not a frontier model. Ragas is typically validated
+against GPT-4-class judges; a 3B model is a meaningfully weaker judge.
+Treat these numbers as a rough internal signal for catching regressions,
+not a benchmark result to defend under scrutiny without this caveat.
+
+Scope: only eval items that resolve to a confident, single-turn answer
+(no clarifying question needed) are scored - Ragas expects a finished
+question/answer pair, not a graph paused mid-dialogue. Items that
+correctly abstain are skipped and counted separately; abstaining is
+correct behavior there, not a generation failure - eval_agent.py's
+coverage metric already covers that decision.
+
+ground_truth is the actual fault/warning chunk's own cause+action text
+(the objectively correct information already in the manual), not a
+separately hand-written ideal answer - keeps grading anchored to the
+source, not to a paraphrase nobody re-checks.
+
+Setup: needs an Ollama LangChain chat wrapper. Try running as-is first;
+if you get an ImportError for langchain_ollama or langchain_community,
+run ONE of:
+    pip install langchain-ollama --break-system-packages
+    pip install langchain-community --break-system-packages
+(inside the container - see package_management notes if running elsewhere)
+
+Usage (inside Docker):
+    docker compose exec dev python src/retrieval/eval_ragas.py \\
+        --eval-set data/eval/eval_tune.json
+    # to also use the LLM-phrased (not just deterministic template) answers:
+    docker compose exec dev python src/retrieval/eval_ragas.py \\
+        --eval-set data/eval/eval_tune.json --llm
+"""
+
+import argparse
+import json
+import os
+import uuid
+
+from sentence_transformers import SentenceTransformer
+from langgraph.types import Command
+
+from agent.graph import build_graph
+from agent.real_retriever import RealRetriever
+
+OLLAMA_MODEL = "qwen2.5:3b"
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
+
+
+class LocalEmbeddings:
+    """Minimal ragas BaseRagasEmbeddings-compatible wrapper around the
+    project's existing bge-small-en-v1.5 model, so answer_relevancy (the
+    one Ragas metric that needs embeddings) doesn't require a separate
+    OpenAI embeddings key or a new dependency."""
+
+    def __init__(self, model_name="BAAI/bge-small-en-v1.5"):
+        self.model = SentenceTransformer(model_name)
+
+    def embed_query(self, text):
+        return self.model.encode(text, normalize_embeddings=True).tolist()
+
+    def embed_documents(self, texts):
+        return self.model.encode(texts, normalize_embeddings=True).tolist()
+
+    async def aembed_query(self, text):
+        return self.embed_query(text)
+
+    async def aembed_documents(self, texts):
+        return self.embed_documents(texts)
+
+
+def build_judge_llm():
+    """Wrap local Ollama (qwen2.5:3b) as the Ragas judge LLM."""
+    try:
+        from langchain_ollama import ChatOllama
+    except ImportError:
+        from langchain_community.chat_models import ChatOllama
+
+    from ragas.llms import LangchainLLMWrapper
+
+    chat = ChatOllama(model=OLLAMA_MODEL, base_url=OLLAMA_URL, temperature=0)
+    return LangchainLLMWrapper(chat)
+
+
+def build_judge_embeddings():
+    from ragas.embeddings import LangchainEmbeddingsWrapper
+
+    # LangchainEmbeddingsWrapper expects a langchain-style embeddings
+    # object; LocalEmbeddings above implements the same method names by
+    # hand rather than depending on an extra langchain integration package.
+    return LangchainEmbeddingsWrapper(LocalEmbeddings())
+
+
+def ground_truth_for(fault):
+    return f"{fault['name']}. Cause: {fault['cause']} What to do: {fault['action']}"
+
+
+def build_rows(items, retriever, graph):
+    rows = []
+    skipped_ambiguous = skipped_no_fault = 0
+    for item in items:
+        cfg = {"configurable": {"thread_id": str(uuid.uuid4())}}
+        out = graph.invoke({"user_turns": [item["query"]], "clarify_count": 0}, cfg)
+
+        if graph.get_state(cfg).next:  # paused on a clarifying question
+            skipped_ambiguous += 1
+            continue
+
+        fault = out.get("fault")
+        if not fault:  # unknown_code / give_up / unverified
+            skipped_no_fault += 1
+            continue
+
+        rows.append({
+            "question": item["query"],
+            "answer": out["answer"],
+            "contexts": [retriever.text_by_id.get(fault["chunk_id"], "")],
+            "ground_truth": ground_truth_for(fault),
+        })
+    return rows, skipped_ambiguous, skipped_no_fault
+
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser(description="Ragas generation-quality eval over real agent answers.")
+    ap.add_argument("--eval-set", default="data/eval/eval_tune.json")
+    ap.add_argument("--llm", action="store_true", help="use qwen2.5:3b to phrase the agent's answers too")
+    ap.add_argument("--out", default="data/eval/ragas_results.json")
+    args = ap.parse_args()
+
+    items = json.load(open(args.eval_set))
+    items = [i for i in items if i.get("type") not in ("out_of_scope", "param_lookup_out_of_scope")]
+    print(f"{len(items)} in-scope eval items loaded from {args.eval_set}")
+
+    retriever = RealRetriever()
+    graph = build_graph(retriever, use_llm=args.llm)
+
+    rows, skipped_ambiguous, skipped_no_fault = build_rows(items, retriever, graph)
+    print(f"{len(rows)} scored, {skipped_ambiguous} skipped (agent correctly asked to clarify), "
+          f"{skipped_no_fault} skipped (unknown_code / give_up / unverified)")
+    if not rows:
+        raise SystemExit("nothing to score")
+
+    from datasets import Dataset
+    import ragas_compat
+    from ragas import evaluate
+    from ragas.metrics import answer_relevancy, context_precision, context_recall, faithfulness
+
+    judge_llm = build_judge_llm()
+    judge_embeddings = build_judge_embeddings()
+
+    ds = Dataset.from_list(rows)
+    result = evaluate(
+        ds,
+        metrics=[faithfulness, answer_relevancy, context_precision, context_recall],
+        llm=judge_llm,
+        embeddings=judge_embeddings,
+    )
+    print(f"\nJudge: local {OLLAMA_MODEL} via Ollama - treat as a rough signal, "
+          f"not a frontier-model-grade benchmark result.\n")
+    print(result)
+
+    with open(args.out, "w") as f:
+        json.dump({"summary": dict(result), "rows": rows}, f, indent=2)
+    print(f"\nWritten to {args.out}")

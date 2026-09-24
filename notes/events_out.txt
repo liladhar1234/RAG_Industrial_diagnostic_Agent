@@ -1,0 +1,26 @@
+warning 78
+fault 94
+
+Example parent event:
+{
+  "kind": "warning",
+  "code": "64FF",
+  "name": "Fault reset",
+  "cause": "A fault has been reset from the\npanel, Drive composer PC tool,\nfieldbus or I/O.",
+  "action": "Event. Informative only.",
+  "aux": [],
+  "page": 410
+}
+
+Example chunk:
+{
+  "id": "ACS580-warning-64FF",
+  "text": "ACS580 > warning_tracing > 64FF\nWarning 64FF: Fault reset\nCause: A fault has been reset from the\npanel, Drive composer PC tool,\nfieldbus or I/O.\nWhat to do: Event. Informative only.",
+  "metadata": {
+    "manual": "ACS580",
+    "section": "warning_tracing",
+    "kind": "warning",
+    "code": "64FF",
+    "page": 410
+  }
+}

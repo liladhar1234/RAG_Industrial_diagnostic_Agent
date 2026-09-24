@@ -1,0 +1,29 @@
+966 parameters
+
+Example parent parameter:
+{
+  "id": "01.01",
+  "name": "Motor speed used",
+  "description": "Estimated motor speed. A filter time constant for this signal\ncan be defined by parameter 46.11 Filter time motor speed.",
+  "default": "-",
+  "options": [
+    {
+      "value": "-30000.00\u2026\n30000.00 rpm",
+      "description": "Estimated motor speed.",
+      "fbeq": "See par.\n46.01"
+    }
+  ],
+  "page": 161
+}
+
+Example chunk:
+{
+  "id": "ACS580-param-01.01",
+  "text": "ACS580 > parameter_list > 01.01\nParameter 01.01: Motor speed used\nDescription: Estimated motor speed. A filter time constant for this signal\ncan be defined by parameter 46.11 Filter time motor speed.\nDefault: -\nOptions:\n  - -30000.00\u2026\n30000.00 rpm: Estimated motor speed. (fbeq: See par.\n46.01)",
+  "metadata": {
+    "manual": "ACS580",
+    "section": "parameter_list",
+    "code": "01.01",
+    "page": 161
+  }
+}

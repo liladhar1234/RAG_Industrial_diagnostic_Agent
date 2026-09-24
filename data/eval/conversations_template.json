@@ -1,0 +1,50 @@
+[
+  {
+    "id": "direct_code",
+    "turns": ["fault 5081"],
+    "expected_pauses": 0,
+    "expected_final": "confident",
+    "expected_code": "5081",
+    "notes": "Exact lookup. Should never pause."
+  },
+  {
+    "id": "unknown_code",
+    "turns": ["fault 9999"],
+    "expected_pauses": 0,
+    "expected_final": "unknown_code",
+    "expected_code": null,
+    "notes": "Typed but not in the manual. Must not fall back to a guess."
+  },
+  {
+    "id": "ambiguous_then_code",
+    "turns": ["the drive is overheating", "the panel shows fault 4290"],
+    "expected_pauses": 1,
+    "expected_final": "confident",
+    "expected_code": "4290",
+    "notes": "Vague symptom -> clarifying question -> user supplies a code. 'Overheating' sits in the near-identical temperature cluster (4290/A4A9, 4310/A4B0, 4210/A4A1, 42F1/A4F6), so pausing is the correct behaviour. If the agent answers on turn 1 instead, that is a confident-guess failure."
+  },
+  {
+    "id": "ambiguous_then_vague",
+    "turns": ["the drive is overheating", "not sure", "still not sure"],
+    "expected_pauses": 2,
+    "expected_final": "give_up",
+    "expected_code": null,
+    "notes": "MAX_CLARIFY is 2, so the agent should escalate. Also shows whether 'not sure' erases the original symptom (retrieve uses only the latest turn)."
+  },
+  {
+    "id": "out_of_scope_no_confident_answer",
+    "turns": ["the coffee machine is broken", "it makes no coffee", "no code shown"],
+    "expected_pauses": 2,
+    "expected_final": "give_up",
+    "expected_code": null,
+    "notes": "The critical case: the agent must NOT answer confidently with a wrong fault."
+  },
+  {
+    "id": "symptom_clear_enough",
+    "turns": ["analog input supervision fault, drive stopped"],
+    "expected_pauses": 0,
+    "expected_final": "confident",
+    "expected_code": "80A0",
+    "notes": "Known-good guard: in the tune run this scored top1 0.85 with gap 0.30 and answered fault 80A0. It reuses an existing eval query on purpose, since this file tests decisions, not retrieval. Guards against an agent that always asks."
+  }
+]

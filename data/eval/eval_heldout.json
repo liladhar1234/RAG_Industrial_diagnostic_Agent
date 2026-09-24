@@ -1,0 +1,118 @@
+[
+  {
+    "query": "fault 5081",
+    "expected_id": "ACS580-fault-5081",
+    "type": "exact_code"
+  },
+  {
+    "query": "warning A2B1",
+    "expected_id": "ACS580-warning-A2B1",
+    "type": "exact_code"
+  },
+  {
+    "query": "parameter 36.09",
+    "expected_id": "ACS580-param-36.09",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "fault 80A0",
+    "expected_id": "ACS580-fault-80A0",
+    "type": "exact_code"
+  },
+  {
+    "query": "auxiliary fan is broken",
+    "expected_id": "ACS580-fault-5081",
+    "type": "symptom"
+  },
+  {
+    "query": "how to change the drive's pass code",
+    "expected_id": "ACS580-param-96.02",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "DC link overvoltage warning while the drive is stopped",
+    "expected_id": "ACS580-warning-A3A1",
+    "type": "symptom_disambiguation",
+    "note": "A3A1 (warning) vs 3210 (fault) share the name 'DC link overvoltage'"
+  },
+  {
+    "query": "DC link overvoltage fault while running",
+    "expected_id": "ACS580-fault-3210",
+    "type": "symptom_disambiguation"
+  },
+  {
+    "query": "auxiliary cooling fan IP55 missing warning",
+    "expected_id": "ACS580-warning-A582",
+    "type": "symptom_disambiguation",
+    "note": "distinguish from A581 'Fan' and fault-5081 'Auxiliary fan broken' - three similar-sounding fan issues"
+  },
+  {
+    "query": "6591",
+    "expected_id": "ACS580-fault-6591",
+    "type": "exact_code"
+  },
+  {
+    "query": "the display shows fault 1080",
+    "expected_id": "ACS580-fault-1080",
+    "type": "exact_code"
+  },
+  {
+    "query": "what does warning A5ED mean",
+    "expected_id": "ACS580-warning-A5ED",
+    "type": "exact_code"
+  },
+  {
+    "query": "warning D502",
+    "expected_id": "ACS580-warning-D502",
+    "type": "exact_code"
+  },
+  {
+    "query": "what does warning A3A2 mean",
+    "expected_id": "ACS580-warning-A3A2",
+    "type": "exact_code"
+  },
+  {
+    "query": "drive stopped, the standard I/O block seems to have lost communication",
+    "expected_id": "ACS580-fault-5098",
+    "type": "symptom"
+  },
+  {
+    "query": "warning about an analog input, the mA/V hardware switch doesn't match the parameter setting",
+    "expected_id": "ACS580-warning-A6E5",
+    "type": "symptom"
+  },
+  {
+    "query": "drive tripped because the PLC requested a function it doesn't support or that isn't switched on",
+    "expected_id": "ACS580-fault-65A1",
+    "type": "symptom"
+  },
+  {
+    "query": "changed the drive's passcode and now it warns that the new one was never verified",
+    "expected_id": "ACS580-warning-A6B1",
+    "type": "symptom"
+  },
+  {
+    "query": "the coffee machine is broken",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "unrelated"
+  },
+  {
+    "query": "my printer keeps jamming paper",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "unrelated"
+  },
+  {
+    "query": "what is the maximum cable length between the drive and the motor",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "installation question"
+  },
+  {
+    "query": "how do I copy parameters to another drive",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "how-to; check the manual has no matching warning before keeping"
+  }
+]

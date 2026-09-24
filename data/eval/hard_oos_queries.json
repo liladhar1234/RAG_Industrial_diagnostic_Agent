@@ -1,0 +1,10 @@
+[
+  {"query": "how often should the cooling fan be replaced", "expected_id": null, "type": "out_of_scope", "note": "maintenance question that shares vocabulary with fan faults"},
+  {"query": "how do I connect the drive to a PLC over Modbus", "expected_id": null, "type": "out_of_scope", "note": "may pull fieldbus communication faults"},
+  {"query": "how do I change the acceleration time", "expected_id": null, "type": "out_of_scope", "note": "parameter/how-to question"},
+  {"query": "how do I enter the motor nameplate data", "expected_id": null, "type": "out_of_scope", "note": "commissioning question"},
+  {"query": "what is the maximum cable length between the drive and the motor", "expected_id": null, "type": "out_of_scope", "note": "installation question"},
+  {"query": "how do I copy parameters to another drive", "expected_id": null, "type": "out_of_scope", "note": "how-to; check the manual has no matching warning before keeping"},
+  {"query": "what is the rated power of the drive", "expected_id": null, "type": "out_of_scope", "note": "spec question"},
+  {"query": "how do I wire the emergency stop", "expected_id": null, "type": "out_of_scope", "note": "may pull safe-torque-off faults"}
+]

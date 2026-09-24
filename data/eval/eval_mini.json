@@ -1,0 +1,34 @@
+[
+ {
+  "query": "motor speed used parameter",
+  "expected_id": "ACS580-param-01.01",
+  "type": "param_lookup_out_of_scope"
+ },
+ {
+  "query": "ULC overload actions parameter",
+  "expected_id": "ACS580-param-37.03",
+  "type": "param_lookup_out_of_scope"
+ },
+ {
+  "query": "how do I reset the amplitude logger",
+  "expected_id": "ACS580-param-36.09",
+  "type": "param_lookup_out_of_scope"
+ },
+ {
+  "query": "cooling fan feedback is missing",
+  "expected_id": "ACS580-warning-A581",
+  "type": "symptom"
+ },
+ {
+  "query": "drive shows an overcurrent warning while running",
+  "expected_id": "ACS580-warning-A2B1",
+  "type": "symptom_disambiguation",
+  "note": "A2B1 (warning) vs 2310 (fault) share the same name 'Overcurrent' - query specifies warning, not a trip"
+ },
+ {
+  "query": "drive tripped on an overcurrent fault",
+  "expected_id": "ACS580-fault-2310",
+  "type": "symptom_disambiguation",
+  "note": "same pair as above, opposite answer - query specifies a trip/fault, not a warning"
+ }
+]

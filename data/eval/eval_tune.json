@@ -1,0 +1,303 @@
+[
+  {
+    "query": "motor speed used parameter",
+    "expected_id": "ACS580-param-01.01",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "ULC overload actions parameter",
+    "expected_id": "ACS580-param-37.03",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "how do I reset the amplitude logger",
+    "expected_id": "ACS580-param-36.09",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "cooling fan feedback is missing",
+    "expected_id": "ACS580-warning-A581",
+    "type": "symptom"
+  },
+  {
+    "query": "drive shows an overcurrent warning while running",
+    "expected_id": "ACS580-warning-A2B1",
+    "type": "symptom_disambiguation",
+    "note": "A2B1 (warning) vs 2310 (fault) share the same name 'Overcurrent' - query specifies warning, not a trip"
+  },
+  {
+    "query": "drive tripped on an overcurrent fault",
+    "expected_id": "ACS580-fault-2310",
+    "type": "symptom_disambiguation",
+    "note": "same pair as above, opposite answer - query specifies a trip/fault, not a warning"
+  },
+  {
+    "query": "analog input signal outside limits, warning only",
+    "expected_id": "ACS580-warning-A8A0",
+    "type": "symptom_disambiguation",
+    "note": "A8A0 (warning) vs 80A0 (fault) share the name 'AI supervision'"
+  },
+  {
+    "query": "analog input supervision fault, drive stopped",
+    "expected_id": "ACS580-fault-80A0",
+    "type": "symptom_disambiguation"
+  },
+  {
+    "query": "warning A8BF",
+    "expected_id": "ACS580-warning-A8BF",
+    "type": "hard_negative",
+    "note": "parameter 37.04 ULC underload actions explicitly mentions warning A8BF in its description text, but is NOT the right answer - the flagged hard negative from Phase 1"
+  },
+  {
+    "query": "fault 4981",
+    "expected_id": "ACS580-fault-4981",
+    "type": "exact_code"
+  },
+  {
+    "query": "the display shows warning A8B4",
+    "expected_id": "ACS580-warning-A8B4",
+    "type": "exact_code"
+  },
+  {
+    "query": "what does fault 6685 mean",
+    "expected_id": "ACS580-fault-6685",
+    "type": "exact_code"
+  },
+  {
+    "query": "warning A6A7",
+    "expected_id": "ACS580-warning-A6A7",
+    "type": "exact_code"
+  },
+  {
+    "query": "the display shows fault 3130",
+    "expected_id": "ACS580-fault-3130",
+    "type": "exact_code"
+  },
+  {
+    "query": "what does fault 80B5 mean",
+    "expected_id": "ACS580-fault-80B5",
+    "type": "exact_code"
+  },
+  {
+    "query": "5080",
+    "expected_id": "ACS580-fault-5080",
+    "type": "exact_code"
+  },
+  {
+    "query": "fault 6682",
+    "expected_id": "ACS580-fault-6682",
+    "type": "exact_code"
+  },
+  {
+    "query": "A6E6",
+    "expected_id": "ACS580-warning-A6E6",
+    "type": "exact_code"
+  },
+  {
+    "query": "the display shows fault 6681",
+    "expected_id": "ACS580-fault-6681",
+    "type": "exact_code"
+  },
+  {
+    "query": "drive tripped right after power-up, says the saved parameters failed to load",
+    "expected_id": "ACS580-fault-6581",
+    "type": "symptom"
+  },
+  {
+    "query": "warning on the panel but the drive keeps running, the PLC is asking for a function the drive doesn't have or hasn't enabled",
+    "expected_id": "ACS580-warning-A6D1",
+    "type": "symptom"
+  },
+  {
+    "query": "tripped, I suspect the braking resistor is shorted or the chopper control has failed",
+    "expected_id": "ACS580-fault-7184",
+    "type": "symptom"
+  },
+  {
+    "query": "motor isn't running but the drive shows a message that it's pre-heating it, is that normal",
+    "expected_id": "ACS580-warning-AFF8",
+    "type": "symptom"
+  },
+  {
+    "query": "trips after I configured the fieldbus adapter, complains it can't read the mapping file",
+    "expected_id": "ACS580-fault-6306",
+    "type": "symptom"
+  },
+  {
+    "query": "warning that the drive has a problem reading its own internal temperature",
+    "expected_id": "ACS580-warning-A5EA",
+    "type": "symptom"
+  },
+  {
+    "query": "someone pressed the e-stop button and now the drive shows a warning and won't run",
+    "expected_id": "ACS580-warning-AFE1",
+    "type": "symptom"
+  },
+  {
+    "query": "warning that temperature can't be monitored because the sensor adapter is set up wrong",
+    "expected_id": "ACS580-warning-A490",
+    "type": "symptom"
+  },
+  {
+    "query": "drive tripped after a firmware update, hardware doesn't match what's stored in its memory",
+    "expected_id": "ACS580-fault-5093",
+    "type": "symptom"
+  },
+  {
+    "query": "on our R6 frame drive a warning says the braking resistor circuit looks shorted, but it keeps running",
+    "expected_id": "ACS580-warning-A792",
+    "type": "symptom"
+  },
+  {
+    "query": "warning that the brake chopper transistor is running hot, drive still going",
+    "expected_id": "ACS580-warning-A79C",
+    "type": "symptom"
+  },
+  {
+    "query": "drive tripped because the brake chopper IGBT got too hot",
+    "expected_id": "ACS580-fault-7192",
+    "type": "symptom"
+  },
+  {
+    "query": "warning, the second external temperature sensor is above its warning limit",
+    "expected_id": "ACS580-warning-A492",
+    "type": "symptom"
+  },
+  {
+    "query": "brand new drive shows a warning that nobody has chosen the supply voltage class yet",
+    "expected_id": "ACS580-warning-A6A6",
+    "type": "symptom"
+  },
+  {
+    "query": "warning after the panel cable came loose while the panel was the active control location",
+    "expected_id": "ACS580-warning-A7EE",
+    "type": "symptom"
+  },
+  {
+    "query": "warning that the load is unbalanced, probably a ground fault in the motor or its cable, drive still running",
+    "expected_id": "ACS580-warning-A2B3",
+    "type": "symptom"
+  },
+  {
+    "query": "drive tripped and the control board can't talk to the power stage any more",
+    "expected_id": "ACS580-fault-5682",
+    "type": "symptom"
+  },
+  {
+    "query": "drive refuses to start and a warning says the enable signal isn't there",
+    "expected_id": "ACS580-warning-AFEB",
+    "type": "symptom"
+  },
+  {
+    "query": "trips right after fitting a fieldbus adapter, apparently this drive doesn't support it",
+    "expected_id": "ACS580-fault-7085",
+    "type": "symptom"
+  },
+  {
+    "query": "warning appears when the motor is struggling under too much load and barely turning",
+    "expected_id": "ACS580-warning-A780",
+    "type": "symptom"
+  },
+  {
+    "query": "after selecting an application macro the drive trips, it tried to overwrite a parameter that can't be changed",
+    "expected_id": "ACS580-fault-64B3",
+    "type": "symptom"
+  },
+  {
+    "query": "tripped on a short circuit but the motor cable is fine, it's the brake chopper IGBT that's shorted",
+    "expected_id": "ACS580-fault-7191",
+    "type": "hard_negative"
+  },
+  {
+    "query": "warning about a short circuit in the motor or its cable, but the drive hasn't tripped",
+    "expected_id": "ACS580-warning-A2B4",
+    "type": "hard_negative"
+  },
+  {
+    "query": "drive still running but warns the power transistors are overloaded, maybe a short in the motor cable",
+    "expected_id": "ACS580-warning-A2BA",
+    "type": "hard_negative"
+  },
+  {
+    "query": "drive tripped because the DC bus voltage dropped, I suspect a missing supply phase or a blown fuse",
+    "expected_id": "ACS580-fault-3220",
+    "type": "hard_negative"
+  },
+  {
+    "query": "warning that the control unit is too hot, drive keeps running",
+    "expected_id": "ACS580-warning-A4A0",
+    "type": "hard_negative"
+  },
+  {
+    "query": "how do I reset my wifi password",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "unrelated"
+  },
+  {
+    "query": "what is the weather like today",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "unrelated"
+  },
+  {
+    "query": "the conveyor belt is misaligned",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "near_domain"
+  },
+  {
+    "query": "motor bearings are making a grinding noise",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "near_domain"
+  },
+  {
+    "query": "the pump is leaking oil at the seal",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "near_domain"
+  },
+  {
+    "query": "the elevator door will not close",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "near_domain"
+  },
+  {
+    "query": "how often should the cooling fan be replaced",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "maintenance question that shares vocabulary with fan faults"
+  },
+  {
+    "query": "how do I connect the drive to a PLC over Modbus",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "may pull fieldbus communication faults"
+  },
+  {
+    "query": "how do I change the acceleration time",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "parameter/how-to question"
+  },
+  {
+    "query": "how do I enter the motor nameplate data",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "commissioning question"
+  },
+  {
+    "query": "what is the rated power of the drive",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "spec question"
+  },
+  {
+    "query": "how do I wire the emergency stop",
+    "expected_id": null,
+    "type": "out_of_scope",
+    "note": "may pull safe-torque-off faults"
+  }
+]

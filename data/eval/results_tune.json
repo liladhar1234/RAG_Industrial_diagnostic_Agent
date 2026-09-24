@@ -1,0 +1,2541 @@
+{
+  "overall": {
+    "n": 42,
+    "hit@1": 0.8095238095238095,
+    "hit@3": 0.8809523809523809,
+    "hit@5": 0.8809523809523809,
+    "mrr": 0.8412698412698412
+  },
+  "rows": [
+    {
+      "query": "motor speed used parameter",
+      "type": "param_lookup_out_of_scope",
+      "expected_id": "ACS580-param-01.01",
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.870141863822937,
+      "top2_score": 0.8682418465614319,
+      "gap_ratio": 0.0021835718294916525,
+      "top5_ids": [
+        "ACS580-warning-A2B1",
+        "ACS580-fault-7310",
+        "ACS580-warning-A6A4"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B1",
+          "kind": "warning",
+          "code": "A2B1",
+          "score": 0.870141863822937
+        },
+        {
+          "chunk_id": "ACS580-fault-7310",
+          "kind": "fault",
+          "code": "7310",
+          "score": 0.8682418465614319
+        },
+        {
+          "chunk_id": "ACS580-warning-A6A4",
+          "kind": "warning",
+          "code": "A6A4",
+          "score": 0.3893934488296509
+        }
+      ],
+      "timing": {
+        "dense_ms": 613.01587500202,
+        "bm25_ms": 1.1632919995463453,
+        "fuse_ms": 0.027750000299420208,
+        "rerank_ms": 6605.994543999259
+      }
+    },
+    {
+      "query": "ULC overload actions parameter",
+      "type": "param_lookup_out_of_scope",
+      "expected_id": "ACS580-param-37.03",
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.9978657364845276,
+      "top2_score": 0.9977254271507263,
+      "gap_ratio": 0.00014060943138059645,
+      "top5_ids": [
+        "ACS580-fault-8002",
+        "ACS580-warning-A8BE",
+        "ACS580-warning-A6E6"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-8002",
+          "kind": "fault",
+          "code": "8002",
+          "score": 0.9978657364845276
+        },
+        {
+          "chunk_id": "ACS580-warning-A8BE",
+          "kind": "warning",
+          "code": "A8BE",
+          "score": 0.9977254271507263
+        },
+        {
+          "chunk_id": "ACS580-warning-A6E6",
+          "kind": "warning",
+          "code": "A6E6",
+          "score": 0.8996286392211914
+        }
+      ],
+      "timing": {
+        "dense_ms": 329.6730829970329,
+        "bm25_ms": 1.8357919980189763,
+        "fuse_ms": 0.03808399924309924,
+        "rerank_ms": 968.1711250013905
+      }
+    },
+    {
+      "query": "how do I reset the amplitude logger",
+      "type": "param_lookup_out_of_scope",
+      "expected_id": "ACS580-param-36.09",
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.0019624459091573954,
+      "top2_score": 0.00048642579349689186,
+      "gap_ratio": 0.7521328912929143,
+      "top5_ids": [
+        "ACS580-warning-64FF",
+        "ACS580-warning-A8A2",
+        "ACS580-warning-A8A1"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-64FF",
+          "kind": "warning",
+          "code": "64FF",
+          "score": 0.0019624459091573954
+        },
+        {
+          "chunk_id": "ACS580-warning-A8A2",
+          "kind": "warning",
+          "code": "A8A2",
+          "score": 0.00048642579349689186
+        },
+        {
+          "chunk_id": "ACS580-warning-A8A1",
+          "kind": "warning",
+          "code": "A8A1",
+          "score": 8.58655184856616e-05
+        }
+      ],
+      "timing": {
+        "dense_ms": 43.517833000805695,
+        "bm25_ms": 0.7216249941848218,
+        "fuse_ms": 0.023125001462176442,
+        "rerank_ms": 1829.5497509971028
+      }
+    },
+    {
+      "query": "cooling fan feedback is missing",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A581",
+      "expected_key": [
+        "warning",
+        "A581"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9978172779083252,
+      "top2_score": 0.9971703886985779,
+      "gap_ratio": 0.000648304277816632,
+      "top5_ids": [
+        "ACS580-warning-A581",
+        "ACS580-fault-5080",
+        "ACS580-warning-A582"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A581",
+          "kind": "warning",
+          "code": "A581",
+          "score": 0.9978172779083252
+        },
+        {
+          "chunk_id": "ACS580-fault-5080",
+          "kind": "fault",
+          "code": "5080",
+          "score": 0.9971703886985779
+        },
+        {
+          "chunk_id": "ACS580-warning-A582",
+          "kind": "warning",
+          "code": "A582",
+          "score": 0.8317528963088989
+        }
+      ],
+      "timing": {
+        "dense_ms": 211.49262499966426,
+        "bm25_ms": 1.2676659971475601,
+        "fuse_ms": 0.02970799687318504,
+        "rerank_ms": 1073.0529590000515
+      }
+    },
+    {
+      "query": "drive shows an overcurrent warning while running",
+      "type": "symptom_disambiguation",
+      "expected_id": "ACS580-warning-A2B1",
+      "expected_key": [
+        "warning",
+        "A2B1"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9151852130889893,
+      "top2_score": 0.1520778238773346,
+      "gap_ratio": 0.8338283642454928,
+      "top5_ids": [
+        "ACS580-warning-A2B1",
+        "ACS580-warning-A4A9",
+        "ACS580-warning-AFE2"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B1",
+          "kind": "warning",
+          "code": "A2B1",
+          "score": 0.9151852130889893
+        },
+        {
+          "chunk_id": "ACS580-warning-A4A9",
+          "kind": "warning",
+          "code": "A4A9",
+          "score": 0.1520778238773346
+        },
+        {
+          "chunk_id": "ACS580-warning-AFE2",
+          "kind": "warning",
+          "code": "AFE2",
+          "score": 0.11867298930883408
+        }
+      ],
+      "timing": {
+        "dense_ms": 64.44000000192318,
+        "bm25_ms": 0.6146660016383976,
+        "fuse_ms": 0.02062500425381586,
+        "rerank_ms": 1665.8709180046571
+      }
+    },
+    {
+      "query": "drive tripped on an overcurrent fault",
+      "type": "symptom_disambiguation",
+      "expected_id": "ACS580-fault-2310",
+      "expected_key": [
+        "fault",
+        "2310"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.7190297245979309,
+      "top2_score": 0.5620731711387634,
+      "gap_ratio": 0.21828938093892417,
+      "top5_ids": [
+        "ACS580-fault-2310",
+        "ACS580-warning-A2B1",
+        "ACS580-fault-3210"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-2310",
+          "kind": "fault",
+          "code": "2310",
+          "score": 0.7190297245979309
+        },
+        {
+          "chunk_id": "ACS580-warning-A2B1",
+          "kind": "warning",
+          "code": "A2B1",
+          "score": 0.5620731711387634
+        },
+        {
+          "chunk_id": "ACS580-fault-3210",
+          "kind": "fault",
+          "code": "3210",
+          "score": 0.02952597104012966
+        }
+      ],
+      "timing": {
+        "dense_ms": 208.7275000012596,
+        "bm25_ms": 1.374125000438653,
+        "fuse_ms": 0.04141699901083484,
+        "rerank_ms": 3507.92087699665
+      }
+    },
+    {
+      "query": "analog input signal outside limits, warning only",
+      "type": "symptom_disambiguation",
+      "expected_id": "ACS580-warning-A8A0",
+      "expected_key": [
+        "warning",
+        "A8A0"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9961191415786743,
+      "top2_score": 0.8683478236198425,
+      "gap_ratio": 0.12826911222319917,
+      "top5_ids": [
+        "ACS580-warning-A8A0",
+        "ACS580-fault-80A0",
+        "ACS580-warning-A6E5"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A8A0",
+          "kind": "warning",
+          "code": "A8A0",
+          "score": 0.9961191415786743
+        },
+        {
+          "chunk_id": "ACS580-fault-80A0",
+          "kind": "fault",
+          "code": "80A0",
+          "score": 0.8683478236198425
+        },
+        {
+          "chunk_id": "ACS580-warning-A6E5",
+          "kind": "warning",
+          "code": "A6E5",
+          "score": 0.3291448652744293
+        }
+      ],
+      "timing": {
+        "dense_ms": 244.4841250035097,
+        "bm25_ms": 1.5814590005902573,
+        "fuse_ms": 0.040875005652196705,
+        "rerank_ms": 1273.675333999563
+      }
+    },
+    {
+      "query": "analog input supervision fault, drive stopped",
+      "type": "symptom_disambiguation",
+      "expected_id": "ACS580-fault-80A0",
+      "expected_key": [
+        "fault",
+        "80A0"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.8466108441352844,
+      "top2_score": 0.5914034843444824,
+      "gap_ratio": 0.3014458904686804,
+      "top5_ids": [
+        "ACS580-fault-80A0",
+        "ACS580-warning-A8A0",
+        "ACS580-warning-A6E5"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-80A0",
+          "kind": "fault",
+          "code": "80A0",
+          "score": 0.8466108441352844
+        },
+        {
+          "chunk_id": "ACS580-warning-A8A0",
+          "kind": "warning",
+          "code": "A8A0",
+          "score": 0.5914034843444824
+        },
+        {
+          "chunk_id": "ACS580-warning-A6E5",
+          "kind": "warning",
+          "code": "A6E5",
+          "score": 0.40921899676322937
+        }
+      ],
+      "timing": {
+        "dense_ms": 123.84695900254883,
+        "bm25_ms": 0.486917000671383,
+        "fuse_ms": 0.016957994375843555,
+        "rerank_ms": 1181.8664589955006
+      }
+    },
+    {
+      "query": "warning A8BF",
+      "type": "hard_negative",
+      "expected_id": "ACS580-warning-A8BF",
+      "expected_key": [
+        "warning",
+        "A8BF"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-warning-A8BF"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "fault 4981",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-4981",
+      "expected_key": [
+        "fault",
+        "4981"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-4981"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "the display shows warning A8B4",
+      "type": "exact_code",
+      "expected_id": "ACS580-warning-A8B4",
+      "expected_key": [
+        "warning",
+        "A8B4"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-warning-A8B4"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "what does fault 6685 mean",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-6685",
+      "expected_key": [
+        "fault",
+        "6685"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-6685"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "warning A6A7",
+      "type": "exact_code",
+      "expected_id": "ACS580-warning-A6A7",
+      "expected_key": [
+        "warning",
+        "A6A7"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-warning-A6A7"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "the display shows fault 3130",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-3130",
+      "expected_key": [
+        "fault",
+        "3130"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-3130"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "what does fault 80B5 mean",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-80B5",
+      "expected_key": [
+        "fault",
+        "80B5"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-80B5"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "5080",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-5080",
+      "expected_key": [
+        "fault",
+        "5080"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-5080"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "fault 6682",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-6682",
+      "expected_key": [
+        "fault",
+        "6682"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-6682"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "A6E6",
+      "type": "exact_code",
+      "expected_id": "ACS580-warning-A6E6",
+      "expected_key": [
+        "warning",
+        "A6E6"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-warning-A6E6"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "the display shows fault 6681",
+      "type": "exact_code",
+      "expected_id": "ACS580-fault-6681",
+      "expected_key": [
+        "fault",
+        "6681"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": null,
+      "top2_score": null,
+      "gap_ratio": null,
+      "top5_ids": [
+        "ACS580-fault-6681"
+      ],
+      "path": "exact_lookup",
+      "timing": {
+        "path": "exact_lookup"
+      }
+    },
+    {
+      "query": "drive tripped right after power-up, says the saved parameters failed to load",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-6581",
+      "expected_key": [
+        "fault",
+        "6581"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.7992709875106812,
+      "top2_score": 0.033933427184820175,
+      "gap_ratio": 0.9575445278071392,
+      "top5_ids": [
+        "ACS580-fault-6581",
+        "ACS580-fault-6591",
+        "ACS580-fault-1080"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-6581",
+          "kind": "fault",
+          "code": "6581",
+          "score": 0.7992709875106812
+        },
+        {
+          "chunk_id": "ACS580-fault-6591",
+          "kind": "fault",
+          "code": "6591",
+          "score": 0.033933427184820175
+        },
+        {
+          "chunk_id": "ACS580-fault-1080",
+          "kind": "fault",
+          "code": "1080",
+          "score": 0.021147755905985832
+        }
+      ],
+      "timing": {
+        "dense_ms": 309.3977509997785,
+        "bm25_ms": 3.362667004694231,
+        "fuse_ms": 0.15541700122412294,
+        "rerank_ms": 1063.2112090024748
+      }
+    },
+    {
+      "query": "warning on the panel but the drive keeps running, the PLC is asking for a function the drive doesn't have or hasn't enabled",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A6D1",
+      "expected_key": [
+        "warning",
+        "A6D1"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9886156916618347,
+      "top2_score": 0.9294049143791199,
+      "gap_ratio": 0.05989261325923648,
+      "top5_ids": [
+        "ACS580-warning-A6D1",
+        "ACS580-fault-65A1",
+        "ACS580-warning-64FF"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A6D1",
+          "kind": "warning",
+          "code": "A6D1",
+          "score": 0.9886156916618347
+        },
+        {
+          "chunk_id": "ACS580-fault-65A1",
+          "kind": "fault",
+          "code": "65A1",
+          "score": 0.9294049143791199
+        },
+        {
+          "chunk_id": "ACS580-warning-64FF",
+          "kind": "warning",
+          "code": "64FF",
+          "score": 0.18221928179264069
+        }
+      ],
+      "timing": {
+        "dense_ms": 84.61883300333284,
+        "bm25_ms": 1.337374997092411,
+        "fuse_ms": 0.01737500133458525,
+        "rerank_ms": 847.2836669971002
+      }
+    },
+    {
+      "query": "tripped, I suspect the braking resistor is shorted or the chopper control has failed",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-7184",
+      "expected_key": [
+        "fault",
+        "7184"
+      ],
+      "in_scope": true,
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 0.5,
+      "top1_score": 0.9338987469673157,
+      "top2_score": 0.9116685390472412,
+      "gap_ratio": 0.02380365964968199,
+      "top5_ids": [
+        "ACS580-warning-A792",
+        "ACS580-fault-7184",
+        "ACS580-fault-7191"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A792",
+          "kind": "warning",
+          "code": "A792",
+          "score": 0.9338987469673157
+        },
+        {
+          "chunk_id": "ACS580-fault-7184",
+          "kind": "fault",
+          "code": "7184",
+          "score": 0.9116685390472412
+        },
+        {
+          "chunk_id": "ACS580-fault-7191",
+          "kind": "fault",
+          "code": "7191",
+          "score": 0.481961190700531
+        }
+      ],
+      "timing": {
+        "dense_ms": 94.22004199586809,
+        "bm25_ms": 0.9389170008944348,
+        "fuse_ms": 0.0199169953702949,
+        "rerank_ms": 675.3855010028929
+      }
+    },
+    {
+      "query": "motor isn't running but the drive shows a message that it's pre-heating it, is that normal",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-AFF8",
+      "expected_key": [
+        "warning",
+        "AFF8"
+      ],
+      "in_scope": true,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.01455652341246605,
+      "top2_score": 0.013912646099925041,
+      "gap_ratio": 0.04423290467760993,
+      "top5_ids": [
+        "ACS580-warning-A4A9",
+        "ACS580-warning-A6A5",
+        "ACS580-fault-4290"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A4A9",
+          "kind": "warning",
+          "code": "A4A9",
+          "score": 0.01455652341246605
+        },
+        {
+          "chunk_id": "ACS580-warning-A6A5",
+          "kind": "warning",
+          "code": "A6A5",
+          "score": 0.013912646099925041
+        },
+        {
+          "chunk_id": "ACS580-fault-4290",
+          "kind": "fault",
+          "code": "4290",
+          "score": 0.011306235566735268
+        }
+      ],
+      "timing": {
+        "dense_ms": 122.66829200234497,
+        "bm25_ms": 1.2062090027029626,
+        "fuse_ms": 0.021625004592351615,
+        "rerank_ms": 1483.8426670030458
+      }
+    },
+    {
+      "query": "trips after I configured the fieldbus adapter, complains it can't read the mapping file",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-6306",
+      "expected_key": [
+        "fault",
+        "6306"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.965905487537384,
+      "top2_score": 0.6273472309112549,
+      "gap_ratio": 0.3505086791558638,
+      "top5_ids": [
+        "ACS580-fault-6306",
+        "ACS580-fault-6682",
+        "ACS580-fault-FF81"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-6306",
+          "kind": "fault",
+          "code": "6306",
+          "score": 0.965905487537384
+        },
+        {
+          "chunk_id": "ACS580-fault-6682",
+          "kind": "fault",
+          "code": "6682",
+          "score": 0.6273472309112549
+        },
+        {
+          "chunk_id": "ACS580-fault-FF81",
+          "kind": "fault",
+          "code": "FF81",
+          "score": 0.10010067373514175
+        }
+      ],
+      "timing": {
+        "dense_ms": 170.11141699913424,
+        "bm25_ms": 1.542958001664374,
+        "fuse_ms": 0.04466700193006545,
+        "rerank_ms": 967.9162920001545
+      }
+    },
+    {
+      "query": "warning that the drive has a problem reading its own internal temperature",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A5EA",
+      "expected_key": [
+        "warning",
+        "A5EA"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9625769853591919,
+      "top2_score": 0.43533480167388916,
+      "gap_ratio": 0.5477402760554875,
+      "top5_ids": [
+        "ACS580-warning-A5EA",
+        "ACS580-fault-5094",
+        "ACS580-warning-A4A9"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A5EA",
+          "kind": "warning",
+          "code": "A5EA",
+          "score": 0.9625769853591919
+        },
+        {
+          "chunk_id": "ACS580-fault-5094",
+          "kind": "fault",
+          "code": "5094",
+          "score": 0.43533480167388916
+        },
+        {
+          "chunk_id": "ACS580-warning-A4A9",
+          "kind": "warning",
+          "code": "A4A9",
+          "score": 0.171766459941864
+        }
+      ],
+      "timing": {
+        "dense_ms": 171.58637499960605,
+        "bm25_ms": 0.9332920017186552,
+        "fuse_ms": 0.01883300137706101,
+        "rerank_ms": 1051.007166999625
+      }
+    },
+    {
+      "query": "someone pressed the e-stop button and now the drive shows a warning and won't run",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-AFE1",
+      "expected_key": [
+        "warning",
+        "AFE1"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9139368534088135,
+      "top2_score": 0.20446641743183136,
+      "gap_ratio": 0.7762794916637732,
+      "top5_ids": [
+        "ACS580-warning-AFE1",
+        "ACS580-warning-A5A0",
+        "ACS580-warning-AFE9"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-AFE1",
+          "kind": "warning",
+          "code": "AFE1",
+          "score": 0.9139368534088135
+        },
+        {
+          "chunk_id": "ACS580-warning-A5A0",
+          "kind": "warning",
+          "code": "A5A0",
+          "score": 0.20446641743183136
+        },
+        {
+          "chunk_id": "ACS580-warning-AFE9",
+          "kind": "warning",
+          "code": "AFE9",
+          "score": 0.10469470918178558
+        }
+      ],
+      "timing": {
+        "dense_ms": 122.17829099972732,
+        "bm25_ms": 1.5327910004998557,
+        "fuse_ms": 0.03483399632386863,
+        "rerank_ms": 1350.2482500043698
+      }
+    },
+    {
+      "query": "warning that temperature can't be monitored because the sensor adapter is set up wrong",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A490",
+      "expected_key": [
+        "warning",
+        "A490"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9985063672065735,
+      "top2_score": 0.03181147202849388,
+      "gap_ratio": 0.9681409422380652,
+      "top5_ids": [
+        "ACS580-warning-A490",
+        "ACS580-fault-4991",
+        "ACS580-warning-A4A0"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A490",
+          "kind": "warning",
+          "code": "A490",
+          "score": 0.9985063672065735
+        },
+        {
+          "chunk_id": "ACS580-fault-4991",
+          "kind": "fault",
+          "code": "4991",
+          "score": 0.03181147202849388
+        },
+        {
+          "chunk_id": "ACS580-warning-A4A0",
+          "kind": "warning",
+          "code": "A4A0",
+          "score": 0.030317416414618492
+        }
+      ],
+      "timing": {
+        "dense_ms": 212.74583399645053,
+        "bm25_ms": 1.7189170030178502,
+        "fuse_ms": 0.03504200140014291,
+        "rerank_ms": 979.1857090021949
+      }
+    },
+    {
+      "query": "drive tripped after a firmware update, hardware doesn't match what's stored in its memory",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-5093",
+      "expected_key": [
+        "fault",
+        "5093"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9979797005653381,
+      "top2_score": 0.017188457772135735,
+      "gap_ratio": 0.9827767460977425,
+      "top5_ids": [
+        "ACS580-fault-5093",
+        "ACS580-fault-1080",
+        "ACS580-fault-5092"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-5093",
+          "kind": "fault",
+          "code": "5093",
+          "score": 0.9979797005653381
+        },
+        {
+          "chunk_id": "ACS580-fault-1080",
+          "kind": "fault",
+          "code": "1080",
+          "score": 0.017188457772135735
+        },
+        {
+          "chunk_id": "ACS580-fault-5092",
+          "kind": "fault",
+          "code": "5092",
+          "score": 0.0038730998057872057
+        }
+      ],
+      "timing": {
+        "dense_ms": 93.03679200093029,
+        "bm25_ms": 1.2463329985621385,
+        "fuse_ms": 0.027000001864507794,
+        "rerank_ms": 722.6387920018169
+      }
+    },
+    {
+      "query": "on our R6 frame drive a warning says the braking resistor circuit looks shorted, but it keeps running",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A792",
+      "expected_key": [
+        "warning",
+        "A792"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9852088689804077,
+      "top2_score": 0.29058513045310974,
+      "gap_ratio": 0.7050522588638121,
+      "top5_ids": [
+        "ACS580-warning-A792",
+        "ACS580-fault-7191",
+        "ACS580-fault-7181"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A792",
+          "kind": "warning",
+          "code": "A792",
+          "score": 0.9852088689804077
+        },
+        {
+          "chunk_id": "ACS580-fault-7191",
+          "kind": "fault",
+          "code": "7191",
+          "score": 0.29058513045310974
+        },
+        {
+          "chunk_id": "ACS580-fault-7181",
+          "kind": "fault",
+          "code": "7181",
+          "score": 0.029743680730462074
+        }
+      ],
+      "timing": {
+        "dense_ms": 193.79204199503874,
+        "bm25_ms": 1.48908299888717,
+        "fuse_ms": 0.02758300252025947,
+        "rerank_ms": 1669.54450099729
+      }
+    },
+    {
+      "query": "warning that the brake chopper transistor is running hot, drive still going",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A79C",
+      "expected_key": [
+        "warning",
+        "A79C"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9388433694839478,
+      "top2_score": 0.7216262817382812,
+      "gap_ratio": 0.23136669524019093,
+      "top5_ids": [
+        "ACS580-warning-A79C",
+        "ACS580-warning-A792",
+        "ACS580-fault-7192"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A79C",
+          "kind": "warning",
+          "code": "A79C",
+          "score": 0.9388433694839478
+        },
+        {
+          "chunk_id": "ACS580-warning-A792",
+          "kind": "warning",
+          "code": "A792",
+          "score": 0.7216262817382812
+        },
+        {
+          "chunk_id": "ACS580-fault-7192",
+          "kind": "fault",
+          "code": "7192",
+          "score": 0.15105856955051422
+        }
+      ],
+      "timing": {
+        "dense_ms": 242.1533750020899,
+        "bm25_ms": 5.768499999248888,
+        "fuse_ms": 0.045166998461354524,
+        "rerank_ms": 1055.549874996359
+      }
+    },
+    {
+      "query": "drive tripped because the brake chopper IGBT got too hot",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-7192",
+      "expected_key": [
+        "fault",
+        "7192"
+      ],
+      "in_scope": true,
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 0.5,
+      "top1_score": 0.6904712319374084,
+      "top2_score": 0.6532344818115234,
+      "gap_ratio": 0.05392947367466939,
+      "top5_ids": [
+        "ACS580-warning-A79C",
+        "ACS580-fault-7192",
+        "ACS580-fault-7191"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A79C",
+          "kind": "warning",
+          "code": "A79C",
+          "score": 0.6904712319374084
+        },
+        {
+          "chunk_id": "ACS580-fault-7192",
+          "kind": "fault",
+          "code": "7192",
+          "score": 0.6532344818115234
+        },
+        {
+          "chunk_id": "ACS580-fault-7191",
+          "kind": "fault",
+          "code": "7191",
+          "score": 0.10314469784498215
+        }
+      ],
+      "timing": {
+        "dense_ms": 60.478708997834474,
+        "bm25_ms": 0.6299999949987978,
+        "fuse_ms": 0.017209000361617655,
+        "rerank_ms": 1060.5639589994098
+      }
+    },
+    {
+      "query": "warning, the second external temperature sensor is above its warning limit",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A492",
+      "expected_key": [
+        "warning",
+        "A492"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9743276238441467,
+      "top2_score": 0.8509792685508728,
+      "gap_ratio": 0.12659843801473158,
+      "top5_ids": [
+        "ACS580-warning-A492",
+        "ACS580-warning-A491",
+        "ACS580-warning-A4A0"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A492",
+          "kind": "warning",
+          "code": "A492",
+          "score": 0.9743276238441467
+        },
+        {
+          "chunk_id": "ACS580-warning-A491",
+          "kind": "warning",
+          "code": "A491",
+          "score": 0.8509792685508728
+        },
+        {
+          "chunk_id": "ACS580-warning-A4A0",
+          "kind": "warning",
+          "code": "A4A0",
+          "score": 0.5178766846656799
+        }
+      ],
+      "timing": {
+        "dense_ms": 124.98316699930001,
+        "bm25_ms": 1.2084580012015067,
+        "fuse_ms": 0.02562500594649464,
+        "rerank_ms": 706.9756260025315
+      }
+    },
+    {
+      "query": "brand new drive shows a warning that nobody has chosen the supply voltage class yet",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A6A6",
+      "expected_key": [
+        "warning",
+        "A6A6"
+      ],
+      "in_scope": true,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.03505874052643776,
+      "top2_score": 0.00830540806055069,
+      "gap_ratio": 0.7631002159279626,
+      "top5_ids": [
+        "ACS580-warning-A3AA",
+        "ACS580-warning-A3A2",
+        "ACS580-fault-5093"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A3AA",
+          "kind": "warning",
+          "code": "A3AA",
+          "score": 0.03505874052643776
+        },
+        {
+          "chunk_id": "ACS580-warning-A3A2",
+          "kind": "warning",
+          "code": "A3A2",
+          "score": 0.00830540806055069
+        },
+        {
+          "chunk_id": "ACS580-fault-5093",
+          "kind": "fault",
+          "code": "5093",
+          "score": 0.002141338074579835
+        }
+      ],
+      "timing": {
+        "dense_ms": 61.224917000799906,
+        "bm25_ms": 0.9225829999195412,
+        "fuse_ms": 0.018165999790653586,
+        "rerank_ms": 789.88233400014
+      }
+    },
+    {
+      "query": "warning after the panel cable came loose while the panel was the active control location",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A7EE",
+      "expected_key": [
+        "warning",
+        "A7EE"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9896492958068848,
+      "top2_score": 0.6483519077301025,
+      "gap_ratio": 0.34486700442555696,
+      "top5_ids": [
+        "ACS580-warning-A7EE",
+        "ACS580-fault-7081",
+        "ACS580-warning-64FF"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A7EE",
+          "kind": "warning",
+          "code": "A7EE",
+          "score": 0.9896492958068848
+        },
+        {
+          "chunk_id": "ACS580-fault-7081",
+          "kind": "fault",
+          "code": "7081",
+          "score": 0.6483519077301025
+        },
+        {
+          "chunk_id": "ACS580-warning-64FF",
+          "kind": "warning",
+          "code": "64FF",
+          "score": 0.1375752091407776
+        }
+      ],
+      "timing": {
+        "dense_ms": 110.92450000433018,
+        "bm25_ms": 1.0053749938379042,
+        "fuse_ms": 0.021041996660642326,
+        "rerank_ms": 699.3366249953397
+      }
+    },
+    {
+      "query": "warning that the load is unbalanced, probably a ground fault in the motor or its cable, drive still running",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A2B3",
+      "expected_key": [
+        "warning",
+        "A2B3"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.995919942855835,
+      "top2_score": 0.9384167790412903,
+      "gap_ratio": 0.057738741177983006,
+      "top5_ids": [
+        "ACS580-warning-A2B3",
+        "ACS580-fault-2330",
+        "ACS580-warning-A2B4"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B3",
+          "kind": "warning",
+          "code": "A2B3",
+          "score": 0.995919942855835
+        },
+        {
+          "chunk_id": "ACS580-fault-2330",
+          "kind": "fault",
+          "code": "2330",
+          "score": 0.9384167790412903
+        },
+        {
+          "chunk_id": "ACS580-warning-A2B4",
+          "kind": "warning",
+          "code": "A2B4",
+          "score": 0.3310348689556122
+        }
+      ],
+      "timing": {
+        "dense_ms": 179.56725000112783,
+        "bm25_ms": 4.819499998120591,
+        "fuse_ms": 0.045417000364977866,
+        "rerank_ms": 1370.30508400494
+      }
+    },
+    {
+      "query": "drive tripped and the control board can't talk to the power stage any more",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-5682",
+      "expected_key": [
+        "fault",
+        "5682"
+      ],
+      "in_scope": true,
+      "rank": 3,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 0.3333333333333333,
+      "top1_score": 0.1304502636194229,
+      "top2_score": 0.023386694490909576,
+      "gap_ratio": 0.8207232868525418,
+      "top5_ids": [
+        "ACS580-fault-5081",
+        "ACS580-fault-4110",
+        "ACS580-fault-5682"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-5081",
+          "kind": "fault",
+          "code": "5081",
+          "score": 0.1304502636194229
+        },
+        {
+          "chunk_id": "ACS580-fault-4110",
+          "kind": "fault",
+          "code": "4110",
+          "score": 0.023386694490909576
+        },
+        {
+          "chunk_id": "ACS580-fault-5682",
+          "kind": "fault",
+          "code": "5682",
+          "score": 0.021102067083120346
+        }
+      ],
+      "timing": {
+        "dense_ms": 310.7651249956689,
+        "bm25_ms": 1.9810000012512319,
+        "fuse_ms": 0.0520410030731,
+        "rerank_ms": 1306.4249169983668
+      }
+    },
+    {
+      "query": "drive refuses to start and a warning says the enable signal isn't there",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-AFEB",
+      "expected_key": [
+        "warning",
+        "AFEB"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.8120859861373901,
+      "top2_score": 0.2526335120201111,
+      "gap_ratio": 0.6889079280609947,
+      "top5_ids": [
+        "ACS580-warning-AFEB",
+        "ACS580-warning-AFED",
+        "ACS580-warning-AFE9"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-AFEB",
+          "kind": "warning",
+          "code": "AFEB",
+          "score": 0.8120859861373901
+        },
+        {
+          "chunk_id": "ACS580-warning-AFED",
+          "kind": "warning",
+          "code": "AFED",
+          "score": 0.2526335120201111
+        },
+        {
+          "chunk_id": "ACS580-warning-AFE9",
+          "kind": "warning",
+          "code": "AFE9",
+          "score": 0.1934051364660263
+        }
+      ],
+      "timing": {
+        "dense_ms": 649.5844999953988,
+        "bm25_ms": 6.458249998104293,
+        "fuse_ms": 0.1457089965697378,
+        "rerank_ms": 2013.225834001787
+      }
+    },
+    {
+      "query": "trips right after fitting a fieldbus adapter, apparently this drive doesn't support it",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-7085",
+      "expected_key": [
+        "fault",
+        "7085"
+      ],
+      "in_scope": true,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.043707359582185745,
+      "top2_score": 0.03875250741839409,
+      "gap_ratio": 0.11336425286626457,
+      "top5_ids": [
+        "ACS580-fault-65A1",
+        "ACS580-fault-7510",
+        "ACS580-fault-6306"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-65A1",
+          "kind": "fault",
+          "code": "65A1",
+          "score": 0.043707359582185745
+        },
+        {
+          "chunk_id": "ACS580-fault-7510",
+          "kind": "fault",
+          "code": "7510",
+          "score": 0.03875250741839409
+        },
+        {
+          "chunk_id": "ACS580-fault-6306",
+          "kind": "fault",
+          "code": "6306",
+          "score": 0.003259027609601617
+        }
+      ],
+      "timing": {
+        "dense_ms": 350.49445800541434,
+        "bm25_ms": 9.135959000559524,
+        "fuse_ms": 0.06516700523206964,
+        "rerank_ms": 1617.9843339996296
+      }
+    },
+    {
+      "query": "warning appears when the motor is struggling under too much load and barely turning",
+      "type": "symptom",
+      "expected_id": "ACS580-warning-A780",
+      "expected_key": [
+        "warning",
+        "A780"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.7725820541381836,
+      "top2_score": 0.06208990141749382,
+      "gap_ratio": 0.9196332595548635,
+      "top5_ids": [
+        "ACS580-warning-A780",
+        "ACS580-fault-7310",
+        "ACS580-fault-4991"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A780",
+          "kind": "warning",
+          "code": "A780",
+          "score": 0.7725820541381836
+        },
+        {
+          "chunk_id": "ACS580-fault-7310",
+          "kind": "fault",
+          "code": "7310",
+          "score": 0.06208990141749382
+        },
+        {
+          "chunk_id": "ACS580-fault-4991",
+          "kind": "fault",
+          "code": "4991",
+          "score": 0.030548563227057457
+        }
+      ],
+      "timing": {
+        "dense_ms": 237.02391699771397,
+        "bm25_ms": 1.8476250043022446,
+        "fuse_ms": 0.036624995118472725,
+        "rerank_ms": 865.9453750005923
+      }
+    },
+    {
+      "query": "after selecting an application macro the drive trips, it tried to overwrite a parameter that can't be changed",
+      "type": "symptom",
+      "expected_id": "ACS580-fault-64B3",
+      "expected_key": [
+        "fault",
+        "64B3"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.5980772972106934,
+      "top2_score": 0.001330947270616889,
+      "gap_ratio": 0.9977746233190523,
+      "top5_ids": [
+        "ACS580-fault-64B3",
+        "ACS580-warning-A6D1",
+        "ACS580-fault-5093"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-64B3",
+          "kind": "fault",
+          "code": "64B3",
+          "score": 0.5980772972106934
+        },
+        {
+          "chunk_id": "ACS580-warning-A6D1",
+          "kind": "warning",
+          "code": "A6D1",
+          "score": 0.001330947270616889
+        },
+        {
+          "chunk_id": "ACS580-fault-5093",
+          "kind": "fault",
+          "code": "5093",
+          "score": 0.00041707255877554417
+        }
+      ],
+      "timing": {
+        "dense_ms": 68.14075000147568,
+        "bm25_ms": 1.4295830042101443,
+        "fuse_ms": 0.028832997486460954,
+        "rerank_ms": 584.1438749994268
+      }
+    },
+    {
+      "query": "tripped on a short circuit but the motor cable is fine, it's the brake chopper IGBT that's shorted",
+      "type": "hard_negative",
+      "expected_id": "ACS580-fault-7191",
+      "expected_key": [
+        "fault",
+        "7191"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.8024349808692932,
+      "top2_score": 0.3272499442100525,
+      "gap_ratio": 0.5921788655629938,
+      "top5_ids": [
+        "ACS580-fault-7191",
+        "ACS580-fault-2381",
+        "ACS580-fault-2340"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-7191",
+          "kind": "fault",
+          "code": "7191",
+          "score": 0.8024349808692932
+        },
+        {
+          "chunk_id": "ACS580-fault-2381",
+          "kind": "fault",
+          "code": "2381",
+          "score": 0.3272499442100525
+        },
+        {
+          "chunk_id": "ACS580-fault-2340",
+          "kind": "fault",
+          "code": "2340",
+          "score": 0.06057216599583626
+        }
+      ],
+      "timing": {
+        "dense_ms": 150.46137500030454,
+        "bm25_ms": 1.0240000046906061,
+        "fuse_ms": 0.013167002180125564,
+        "rerank_ms": 545.2497079968452
+      }
+    },
+    {
+      "query": "warning about a short circuit in the motor or its cable, but the drive hasn't tripped",
+      "type": "hard_negative",
+      "expected_id": "ACS580-warning-A2B4",
+      "expected_key": [
+        "warning",
+        "A2B4"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.9750328063964844,
+      "top2_score": 0.6944807171821594,
+      "gap_ratio": 0.28773605090395504,
+      "top5_ids": [
+        "ACS580-warning-A2B4",
+        "ACS580-warning-A2B3",
+        "ACS580-fault-2340"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B4",
+          "kind": "warning",
+          "code": "A2B4",
+          "score": 0.9750328063964844
+        },
+        {
+          "chunk_id": "ACS580-warning-A2B3",
+          "kind": "warning",
+          "code": "A2B3",
+          "score": 0.6944807171821594
+        },
+        {
+          "chunk_id": "ACS580-fault-2340",
+          "kind": "fault",
+          "code": "2340",
+          "score": 0.6859291791915894
+        }
+      ],
+      "timing": {
+        "dense_ms": 52.71420800272608,
+        "bm25_ms": 1.4239170050132088,
+        "fuse_ms": 0.027417001547291875,
+        "rerank_ms": 694.6810000008554
+      }
+    },
+    {
+      "query": "drive still running but warns the power transistors are overloaded, maybe a short in the motor cable",
+      "type": "hard_negative",
+      "expected_id": "ACS580-warning-A2BA",
+      "expected_key": [
+        "warning",
+        "A2BA"
+      ],
+      "in_scope": true,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.7324216961860657,
+      "top2_score": 0.6979324817657471,
+      "gap_ratio": 0.04708928558494928,
+      "top5_ids": [
+        "ACS580-warning-A2B1",
+        "ACS580-warning-A2B4",
+        "ACS580-fault-2340"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B1",
+          "kind": "warning",
+          "code": "A2B1",
+          "score": 0.7324216961860657
+        },
+        {
+          "chunk_id": "ACS580-warning-A2B4",
+          "kind": "warning",
+          "code": "A2B4",
+          "score": 0.6979324817657471
+        },
+        {
+          "chunk_id": "ACS580-fault-2340",
+          "kind": "fault",
+          "code": "2340",
+          "score": 0.5128073692321777
+        }
+      ],
+      "timing": {
+        "dense_ms": 52.63241699867649,
+        "bm25_ms": 0.9791670017875731,
+        "fuse_ms": 0.01462499494664371,
+        "rerank_ms": 1048.8883340003667
+      }
+    },
+    {
+      "query": "drive tripped because the DC bus voltage dropped, I suspect a missing supply phase or a blown fuse",
+      "type": "hard_negative",
+      "expected_id": "ACS580-fault-3220",
+      "expected_key": [
+        "fault",
+        "3220"
+      ],
+      "in_scope": true,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.9499381184577942,
+      "top2_score": 0.08298130333423615,
+      "gap_ratio": 0.9126455695146178,
+      "top5_ids": [
+        "ACS580-fault-3130",
+        "ACS580-warning-A3A1",
+        "ACS580-warning-A3A2"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-3130",
+          "kind": "fault",
+          "code": "3130",
+          "score": 0.9499381184577942
+        },
+        {
+          "chunk_id": "ACS580-warning-A3A1",
+          "kind": "warning",
+          "code": "A3A1",
+          "score": 0.08298130333423615
+        },
+        {
+          "chunk_id": "ACS580-warning-A3A2",
+          "kind": "warning",
+          "code": "A3A2",
+          "score": 0.06548900157213211
+        }
+      ],
+      "timing": {
+        "dense_ms": 49.12224999861792,
+        "bm25_ms": 1.2192089998279698,
+        "fuse_ms": 0.022374995751306415,
+        "rerank_ms": 629.6967919988674
+      }
+    },
+    {
+      "query": "warning that the control unit is too hot, drive keeps running",
+      "type": "hard_negative",
+      "expected_id": "ACS580-warning-A4A0",
+      "expected_key": [
+        "warning",
+        "A4A0"
+      ],
+      "in_scope": true,
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "rr": 1.0,
+      "top1_score": 0.6252766847610474,
+      "top2_score": 0.3504280149936676,
+      "gap_ratio": 0.4395632788905516,
+      "top5_ids": [
+        "ACS580-warning-A4A0",
+        "ACS580-fault-4110",
+        "ACS580-fault-5682"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A4A0",
+          "kind": "warning",
+          "code": "A4A0",
+          "score": 0.6252766847610474
+        },
+        {
+          "chunk_id": "ACS580-fault-4110",
+          "kind": "fault",
+          "code": "4110",
+          "score": 0.3504280149936676
+        },
+        {
+          "chunk_id": "ACS580-fault-5682",
+          "kind": "fault",
+          "code": "5682",
+          "score": 0.0060814181342720985
+        }
+      ],
+      "timing": {
+        "dense_ms": 57.56241600465728,
+        "bm25_ms": 0.8445420025964268,
+        "fuse_ms": 0.018541999452281743,
+        "rerank_ms": 355.52154200559016
+      }
+    },
+    {
+      "query": "how do I reset my wifi password",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.059589434415102005,
+      "top2_score": 0.021036045625805855,
+      "gap_ratio": 0.6469836333859447,
+      "top5_ids": [
+        "ACS580-warning-A6B0",
+        "ACS580-warning-64FF",
+        "ACS580-fault-64B1"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A6B0",
+          "kind": "warning",
+          "code": "A6B0",
+          "score": 0.059589434415102005
+        },
+        {
+          "chunk_id": "ACS580-warning-64FF",
+          "kind": "warning",
+          "code": "64FF",
+          "score": 0.021036045625805855
+        },
+        {
+          "chunk_id": "ACS580-fault-64B1",
+          "kind": "fault",
+          "code": "64B1",
+          "score": 0.010119840502738953
+        }
+      ],
+      "timing": {
+        "dense_ms": 41.71654200035846,
+        "bm25_ms": 0.5702090056729503,
+        "fuse_ms": 0.018291000742465258,
+        "rerank_ms": 367.67300000065006
+      }
+    },
+    {
+      "query": "what is the weather like today",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.004788467660546303,
+      "top2_score": 0.0031198838260024786,
+      "gap_ratio": 0.34845882917656795,
+      "top5_ids": [
+        "ACS580-warning-A4A1",
+        "ACS580-fault-4110",
+        "ACS580-fault-5682"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A4A1",
+          "kind": "warning",
+          "code": "A4A1",
+          "score": 0.004788467660546303
+        },
+        {
+          "chunk_id": "ACS580-fault-4110",
+          "kind": "fault",
+          "code": "4110",
+          "score": 0.0031198838260024786
+        },
+        {
+          "chunk_id": "ACS580-fault-5682",
+          "kind": "fault",
+          "code": "5682",
+          "score": 3.729054515133612e-05
+        }
+      ],
+      "timing": {
+        "dense_ms": 78.50341599987587,
+        "bm25_ms": 0.6039170039002784,
+        "fuse_ms": 0.01979200169444084,
+        "rerank_ms": 348.54616700613406
+      }
+    },
+    {
+      "query": "the conveyor belt is misaligned",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.00021081732120364904,
+      "top2_score": 9.382880671182647e-05,
+      "gap_ratio": 0.5549283798118844,
+      "top5_ids": [
+        "ACS580-warning-A2B3",
+        "ACS580-warning-A6A4",
+        "ACS580-fault-4991"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B3",
+          "kind": "warning",
+          "code": "A2B3",
+          "score": 0.00021081732120364904
+        },
+        {
+          "chunk_id": "ACS580-warning-A6A4",
+          "kind": "warning",
+          "code": "A6A4",
+          "score": 9.382880671182647e-05
+        },
+        {
+          "chunk_id": "ACS580-fault-4991",
+          "kind": "fault",
+          "code": "4991",
+          "score": 6.89089938532561e-05
+        }
+      ],
+      "timing": {
+        "dense_ms": 66.11162499757484,
+        "bm25_ms": 0.44958299986319616,
+        "fuse_ms": 0.036666999221779406,
+        "rerank_ms": 898.7394170035259
+      }
+    },
+    {
+      "query": "motor bearings are making a grinding noise",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.00699248630553484,
+      "top2_score": 0.0018808463355526328,
+      "gap_ratio": 0.7310189461416798,
+      "top5_ids": [
+        "ACS580-warning-A2B1",
+        "ACS580-warning-A2B3",
+        "ACS580-fault-2330"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B1",
+          "kind": "warning",
+          "code": "A2B1",
+          "score": 0.00699248630553484
+        },
+        {
+          "chunk_id": "ACS580-warning-A2B3",
+          "kind": "warning",
+          "code": "A2B3",
+          "score": 0.0018808463355526328
+        },
+        {
+          "chunk_id": "ACS580-fault-2330",
+          "kind": "fault",
+          "code": "2330",
+          "score": 0.0007814390701241791
+        }
+      ],
+      "timing": {
+        "dense_ms": 92.4625410043518,
+        "bm25_ms": 0.95645799592603,
+        "fuse_ms": 0.029290997190400958,
+        "rerank_ms": 1530.3100840028492
+      }
+    },
+    {
+      "query": "the pump is leaking oil at the seal",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.0009353497880510986,
+      "top2_score": 8.071047341218218e-05,
+      "gap_ratio": 0.9137109192269652,
+      "top5_ids": [
+        "ACS580-warning-A2B3",
+        "ACS580-warning-A582",
+        "ACS580-warning-AFF6"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A2B3",
+          "kind": "warning",
+          "code": "A2B3",
+          "score": 0.0009353497880510986
+        },
+        {
+          "chunk_id": "ACS580-warning-A582",
+          "kind": "warning",
+          "code": "A582",
+          "score": 8.071047341218218e-05
+        },
+        {
+          "chunk_id": "ACS580-warning-AFF6",
+          "kind": "warning",
+          "code": "AFF6",
+          "score": 6.094274067436345e-05
+        }
+      ],
+      "timing": {
+        "dense_ms": 160.28695800196147,
+        "bm25_ms": 0.759542002924718,
+        "fuse_ms": 0.01974999759113416,
+        "rerank_ms": 962.873166994541
+      }
+    },
+    {
+      "query": "the elevator door will not close",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.00036062649451196194,
+      "top2_score": 7.002585334703326e-05,
+      "gap_ratio": 0.8058216619890902,
+      "top5_ids": [
+        "ACS580-warning-A6B0",
+        "ACS580-warning-A6B1",
+        "ACS580-warning-A3AA"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A6B0",
+          "kind": "warning",
+          "code": "A6B0",
+          "score": 0.00036062649451196194
+        },
+        {
+          "chunk_id": "ACS580-warning-A6B1",
+          "kind": "warning",
+          "code": "A6B1",
+          "score": 7.002585334703326e-05
+        },
+        {
+          "chunk_id": "ACS580-warning-A3AA",
+          "kind": "warning",
+          "code": "A3AA",
+          "score": 4.743130921269767e-05
+        }
+      ],
+      "timing": {
+        "dense_ms": 89.35987499717157,
+        "bm25_ms": 0.5934170039836317,
+        "fuse_ms": 0.018584003555588424,
+        "rerank_ms": 624.362624999776
+      }
+    },
+    {
+      "query": "how often should the cooling fan be replaced",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.19855743646621704,
+      "top2_score": 0.023197216913104057,
+      "gap_ratio": 0.8831712509692334,
+      "top5_ids": [
+        "ACS580-fault-5081",
+        "ACS580-fault-50A0",
+        "ACS580-warning-A88F"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-5081",
+          "kind": "fault",
+          "code": "5081",
+          "score": 0.19855743646621704
+        },
+        {
+          "chunk_id": "ACS580-fault-50A0",
+          "kind": "fault",
+          "code": "50A0",
+          "score": 0.023197216913104057
+        },
+        {
+          "chunk_id": "ACS580-warning-A88F",
+          "kind": "warning",
+          "code": "A88F",
+          "score": 0.016438018530607224
+        }
+      ],
+      "timing": {
+        "dense_ms": 183.0685419990914,
+        "bm25_ms": 1.204250002047047,
+        "fuse_ms": 0.030333998438436538,
+        "rerank_ms": 978.9062090057996
+      }
+    },
+    {
+      "query": "how do I connect the drive to a PLC over Modbus",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.10038168728351593,
+      "top2_score": 0.03132973238825798,
+      "gap_ratio": 0.6878939452395242,
+      "top5_ids": [
+        "ACS580-fault-7510",
+        "ACS580-fault-65A1",
+        "ACS580-warning-A6D1"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-7510",
+          "kind": "fault",
+          "code": "7510",
+          "score": 0.10038168728351593
+        },
+        {
+          "chunk_id": "ACS580-fault-65A1",
+          "kind": "fault",
+          "code": "65A1",
+          "score": 0.03132973238825798
+        },
+        {
+          "chunk_id": "ACS580-warning-A6D1",
+          "kind": "warning",
+          "code": "A6D1",
+          "score": 0.012902175076305866
+        }
+      ],
+      "timing": {
+        "dense_ms": 84.0686250012368,
+        "bm25_ms": 1.349792000837624,
+        "fuse_ms": 0.02337499608984217,
+        "rerank_ms": 743.4110000031069
+      }
+    },
+    {
+      "query": "how do I change the acceleration time",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.01970667950809002,
+      "top2_score": 0.0005714295548386872,
+      "gap_ratio": 0.9710032552869141,
+      "top5_ids": [
+        "ACS580-warning-A6A7",
+        "ACS580-warning-AFED",
+        "ACS580-fault-5098"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A6A7",
+          "kind": "warning",
+          "code": "A6A7",
+          "score": 0.01970667950809002
+        },
+        {
+          "chunk_id": "ACS580-warning-AFED",
+          "kind": "warning",
+          "code": "AFED",
+          "score": 0.0005714295548386872
+        },
+        {
+          "chunk_id": "ACS580-fault-5098",
+          "kind": "fault",
+          "code": "5098",
+          "score": 0.0001608292805030942
+        }
+      ],
+      "timing": {
+        "dense_ms": 101.03762499784352,
+        "bm25_ms": 0.6935419951332733,
+        "fuse_ms": 0.02308299735886976,
+        "rerank_ms": 605.3449169994565
+      }
+    },
+    {
+      "query": "how do I enter the motor nameplate data",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.016122868284583092,
+      "top2_score": 0.007128188386559486,
+      "gap_ratio": 0.557883357927351,
+      "top5_ids": [
+        "ACS580-warning-A6A5",
+        "ACS580-fault-2310",
+        "ACS580-warning-A794"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-A6A5",
+          "kind": "warning",
+          "code": "A6A5",
+          "score": 0.016122868284583092
+        },
+        {
+          "chunk_id": "ACS580-fault-2310",
+          "kind": "fault",
+          "code": "2310",
+          "score": 0.007128188386559486
+        },
+        {
+          "chunk_id": "ACS580-warning-A794",
+          "kind": "warning",
+          "code": "A794",
+          "score": 0.00018166354857385159
+        }
+      ],
+      "timing": {
+        "dense_ms": 100.64024999883259,
+        "bm25_ms": 0.5954170046607032,
+        "fuse_ms": 0.018207996618002653,
+        "rerank_ms": 1301.3797929961584
+      }
+    },
+    {
+      "query": "what is the rated power of the drive",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.16204513609409332,
+      "top2_score": 0.06811495870351791,
+      "gap_ratio": 0.5796544077449742,
+      "top5_ids": [
+        "ACS580-fault-5093",
+        "ACS580-fault-1081",
+        "ACS580-warning-A4A9"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-fault-5093",
+          "kind": "fault",
+          "code": "5093",
+          "score": 0.16204513609409332
+        },
+        {
+          "chunk_id": "ACS580-fault-1081",
+          "kind": "fault",
+          "code": "1081",
+          "score": 0.06811495870351791
+        },
+        {
+          "chunk_id": "ACS580-warning-A4A9",
+          "kind": "warning",
+          "code": "A4A9",
+          "score": 0.012497571296989918
+        }
+      ],
+      "timing": {
+        "dense_ms": 104.87154200382065,
+        "bm25_ms": 1.1625000042840838,
+        "fuse_ms": 0.02983299782499671,
+        "rerank_ms": 822.7952920060488
+      }
+    },
+    {
+      "query": "how do I wire the emergency stop",
+      "type": "out_of_scope",
+      "expected_id": null,
+      "expected_key": null,
+      "in_scope": false,
+      "rank": null,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "rr": 0.0,
+      "top1_score": 0.6636422276496887,
+      "top2_score": 0.09782309830188751,
+      "gap_ratio": 0.852596633809257,
+      "top5_ids": [
+        "ACS580-warning-AFE1",
+        "ACS580-warning-AFE2",
+        "ACS580-fault-73B0"
+      ],
+      "path": "search",
+      "cands": [
+        {
+          "chunk_id": "ACS580-warning-AFE1",
+          "kind": "warning",
+          "code": "AFE1",
+          "score": 0.6636422276496887
+        },
+        {
+          "chunk_id": "ACS580-warning-AFE2",
+          "kind": "warning",
+          "code": "AFE2",
+          "score": 0.09782309830188751
+        },
+        {
+          "chunk_id": "ACS580-fault-73B0",
+          "kind": "fault",
+          "code": "73B0",
+          "score": 0.053187135607004166
+        }
+      ],
+      "timing": {
+        "dense_ms": 65.16166599612916,
+        "bm25_ms": 0.7487499970011413,
+        "fuse_ms": 0.03149999974993989,
+        "rerank_ms": 706.2766260060016
+      }
+    }
+  ]
+}

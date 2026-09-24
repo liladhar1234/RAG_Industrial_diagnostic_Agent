@@ -1,0 +1,98 @@
+[
+  {
+    "query": "fault 5081",
+    "expected_id": "ACS580-fault-5081",
+    "type": "exact_code"
+  },
+  {
+    "query": "warning A2B1",
+    "expected_id": "ACS580-warning-A2B1",
+    "type": "exact_code"
+  },
+  {
+    "query": "parameter 36.09",
+    "expected_id": "ACS580-param-36.09",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "fault 80A0",
+    "expected_id": "ACS580-fault-80A0",
+    "type": "exact_code"
+  },
+  {
+    "query": "motor speed used parameter",
+    "expected_id": "ACS580-param-01.01",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "ULC overload actions parameter",
+    "expected_id": "ACS580-param-37.03",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "auxiliary fan is broken",
+    "expected_id": "ACS580-fault-5081",
+    "type": "symptom"
+  },
+  {
+    "query": "how do I reset the amplitude logger",
+    "expected_id": "ACS580-param-36.09",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "how to change the drive's pass code",
+    "expected_id": "ACS580-param-96.02",
+    "type": "param_lookup_out_of_scope"
+  },
+  {
+    "query": "cooling fan feedback is missing",
+    "expected_id": "ACS580-warning-A581",
+    "type": "symptom"
+  },
+  {
+    "query": "drive shows an overcurrent warning while running",
+    "expected_id": "ACS580-warning-A2B1",
+    "type": "symptom_disambiguation",
+    "note": "A2B1 (warning) vs 2310 (fault) share the same name 'Overcurrent' - query specifies warning, not a trip"
+  },
+  {
+    "query": "drive tripped on an overcurrent fault",
+    "expected_id": "ACS580-fault-2310",
+    "type": "symptom_disambiguation",
+    "note": "same pair as above, opposite answer - query specifies a trip/fault, not a warning"
+  },
+  {
+    "query": "DC link overvoltage warning while the drive is stopped",
+    "expected_id": "ACS580-warning-A3A1",
+    "type": "symptom_disambiguation",
+    "note": "A3A1 (warning) vs 3210 (fault) share the name 'DC link overvoltage'"
+  },
+  {
+    "query": "DC link overvoltage fault while running",
+    "expected_id": "ACS580-fault-3210",
+    "type": "symptom_disambiguation"
+  },
+  {
+    "query": "analog input signal outside limits, warning only",
+    "expected_id": "ACS580-warning-A8A0",
+    "type": "symptom_disambiguation",
+    "note": "A8A0 (warning) vs 80A0 (fault) share the name 'AI supervision'"
+  },
+  {
+    "query": "analog input supervision fault, drive stopped",
+    "expected_id": "ACS580-fault-80A0",
+    "type": "symptom_disambiguation"
+  },
+  {
+    "query": "auxiliary cooling fan IP55 missing warning",
+    "expected_id": "ACS580-warning-A582",
+    "type": "symptom_disambiguation",
+    "note": "distinguish from A581 'Fan' and fault-5081 'Auxiliary fan broken' - three similar-sounding fan issues"
+  },
+  {
+    "query": "warning A8BF",
+    "expected_id": "ACS580-warning-A8BF",
+    "type": "hard_negative",
+    "note": "parameter 37.04 ULC underload actions explicitly mentions warning A8BF in its description text, but is NOT the right answer - the flagged hard negative from Phase 1"
+  }
+]
